@@ -14,6 +14,9 @@ const StyledSection = styled.section`
   height: auto;
   background: ${({ theme }) => theme.colors.background};
   h1 {
+    font-size: 2rem;
+  }
+  p {
     font-size: 1.5rem;
   }
 `
@@ -38,13 +41,25 @@ const NotFoundPage = () => {
     <GlobalStateProvider initialState={globalState}>
       <Layout>
         <SEO
-          title="404: Not found"
+          title="404: Üzgünüz, böyle bir sayfa mevcut değil."
           meta={[{ name: "robots", content: "noindex" }]}
         />
         <StyledSection>
           <StyledContentWrapper>
-            <h1 data-testid="heading">NOT FOUND</h1>
-            <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+            <h1 data-testid="heading"> 404 BULUNAMADI</h1>
+            <h1>(╯°□°）╯︵ ┻━┻</h1>
+            <p>
+              Aradığın şeyi belki{" "}
+              <a
+                href="https://discord.gg/J3PTmeFj6s"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "#7289DA" }}
+              >
+                burada
+              </a>{" "}
+              bulabilirsin 👀
+            </p>
           </StyledContentWrapper>
         </StyledSection>
       </Layout>
