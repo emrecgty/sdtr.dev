@@ -104,7 +104,7 @@ const StyledInterests = styled.div`
     border: 0.125rem solid ${({ theme }) => theme.colors.primary};
     border-radius: ${({ theme }) => theme.borderRadius};
     background: ${({ theme }) => theme.colors.card};
-    .icon {
+    .emoji {
       margin-right: 0.5rem;
     }
   }
@@ -154,7 +154,7 @@ const Interests = ({ content }) => {
       <StyledContentWrapper>
         <h3 className="section-title">{frontmatter.title}</h3>
         <StyledInterests itemCount={interests.length} ref={ref}>
-          {interests.slice(0, shownInterests).map(({ name, icon }, key) => (
+          {interests.slice(0, shownInterests).map(({ name, emoji }, key) => (
             <motion.div
               className="interest"
               key={key}
@@ -162,7 +162,8 @@ const Interests = ({ content }) => {
               initial={{ opacity: 0, scaleY: 0 }}
               animate={iControls}
             >
-              <Img className="icon" fixed={icon.childImageSharp.fixed} /> {name}
+              <span className="emoji">{emoji}</span>
+              {name}
             </motion.div>
           ))}
           {shownInterests < interests.length && (
@@ -172,7 +173,7 @@ const Interests = ({ content }) => {
                 type="button"
                 textAlign="left"
               >
-                + Load more
+                + Daha Fazlası
               </Button>
             </motion.div>
           )}
