@@ -68,6 +68,10 @@ module.exports = {
       name: "Github",
       url: "https://github.com/sdtrdev",
     },
+    {
+      name: "Twitter",
+      url: "https://twitter.com/sdtrdev",
+    },
   ],
 
   //-- NAVIGATION SETTINGS -----
