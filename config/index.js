@@ -49,7 +49,7 @@ module.exports = {
   mediumRssFeed:
     "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2Fsoftware-development-turkey",
 
-  shownArticles: 3,
+  shownArticles: 10,
 
   //-- SOCIAL MEDIA SETTINGS -----
   // There are icons available for the following platforms:
