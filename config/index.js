@@ -74,26 +74,26 @@ module.exports = {
   navLinks: {
     menu: [
       {
-        name: "Articles",
+        name: "Makalelerimiz",
         url: "/#articles",
       },
       {
-        name: "About",
+        name: "Hakkımızda",
         url: "/#about",
       },
       {
-        name: "Features",
+        name: "Projelerimiz",
         url: "/#projects",
       },
     ],
     button: {
-      name: "Contact",
+      name: "Bize Ulaşın",
       url: "/#contact",
     },
   },
   footerLinks: [
     {
-      name: "Privacy",
+      name: "Gizlilik",
       url: "/privacy",
     },
     {
