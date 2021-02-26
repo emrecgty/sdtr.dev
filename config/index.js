@@ -5,7 +5,7 @@ module.exports = {
   siteShortTitle: "SDTR", // Used as logo text in header, footer, and splash screen
   siteDescription:
     "Yazılımcı, tasarımcı ve yetenekli insanların buluştuğu kocaman bir aile!",
-  siteUrl: "https://brave-chandrasekhar-7e5578.netlify.app",
+  siteUrl: "https://sdtr.netlify.app",
   // TODO: SITEYI DEGISTIR
   siteLanguage: "tr_TR",
   siteIcon: "content/favicon.png", // Relative to gatsby-config file
