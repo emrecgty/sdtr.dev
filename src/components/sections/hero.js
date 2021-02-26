@@ -130,6 +130,15 @@ const Hero = ({ content }) => {
             {frontmatter.subtitlePrefix}{" "}
             <AnimatedUnderlining animate={uControls} big>
               {frontmatter.subtitle}
+              <a
+                href="https://discord.gg/J3PTmeFj6s"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "#7289DA" }}
+              >
+                Discord
+              </a>{" "}
+              ailesi!
             </AnimatedUnderlining>
           </h2>
           <div className="description">
