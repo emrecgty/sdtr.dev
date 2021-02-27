@@ -41,8 +41,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
     }
     .image-content {
       width: 100%;
-      height: 15rem;
-      max-width: 25rem;
+      max-width: 17rem;
       margin-top: 4rem;
       margin-left: 0;
       @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
