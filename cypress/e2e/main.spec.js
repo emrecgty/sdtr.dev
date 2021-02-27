@@ -21,16 +21,16 @@ describe("IndexPage", () => {
     cy.findByTestId("animated-heading").should("have.css", "opacity", "1")
   })
 
-  it("references legal pages", () => {
-    cy.findByTestId("footer-links")
-      .findByText(/rules/i)
-      .should("have.attr", "href")
-      .and("include", "rules")
-    cy.findByTestId("footer-links")
-      .findByText(/right-question/i)
-      .should("have.attr", "href")
-      .and("include", "right-question")
-  })
+  // it("references legal pages", () => {
+  //   cy.findByTestId("footer-links")
+  //     .findByText(/rules/i)
+  //     .should("have.attr", "href")
+  //     .and("include", "rules")
+  //   cy.findByTestId("footer-links")
+  //     .findByText(/right-question/i)
+  //     .should("have.attr", "href")
+  //     .and("include", "right-question")
+  // })
 
   it("renders other pages", () => {
     cy.findByTestId("footer-links")
