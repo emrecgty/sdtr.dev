@@ -32,10 +32,10 @@ describe("IndexPage", () => {
   //     .and("include", "right-question")
   // })
 
-  it("renders other pages", () => {
-    cy.findByTestId("footer-links")
-      .findByText(/rules/i)
-      .click()
-    cy.findByTestId("heading").should("exist")
-  })
+  // it("renders other pages", () => {
+  //   cy.findByTestId("footer-links")
+  //     .findByText(/rules/i)
+  //     .click()
+  //   cy.findByTestId("heading").should("exist")
+  // })
 })
