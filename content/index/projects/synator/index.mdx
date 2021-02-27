@@ -1,0 +1,15 @@
+---
+title: "Synator"
+category: "Kubernetes Secret and ConfigMap synchronizer"
+emoji: "☸️"
+screenshot: "./synator.png"
+github: "https://github.com/TheYkk/synator"
+external: "https://medium.com/devopsturkiye/kubernetesde-secret-ve-configmap-senkronizasyon-u-68bde0cd9c9c"
+tags:
+  - Kopf
+  - Python
+visible: true
+position: 2
+---
+
+Kubernetes’de bazı durumlarda secretleri veya ConfigMap’leri başka namespace’lerde de kullanmak isteyebiliyoruz. Kubernetes’de secretler ve ConfigMap’ler namespace bazlı olduğu için farklı bir namespace’den kullanamıyoruz. Kullanmak icin ise secreti veya configmap’i kullanacağımız namespace' e kopyalamamız lazım. Birden fazla namespace veya secret olduğunda bu iş baya bir zor olabiliyor. Bunun için python ve kopf ile küçük bir Kubernetes operatörü yazıldı.
