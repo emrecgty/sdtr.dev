@@ -39,8 +39,8 @@ const StyledContentWrapper = styled(ContentWrapper)`
   }
 `
 
-const Privacy = ({ data }) => {
-  const { body, frontmatter } = data.privacy.edges[0].node
+const RightQuestion = ({ data }) => {
+  const { body, frontmatter } = data.rightQuestion.edges[0].node
   const { title, seoTitle, useSeoTitleSuffix, useSplashScreen } = frontmatter
 
   const globalState = {
@@ -70,9 +70,9 @@ const Privacy = ({ data }) => {
   )
 }
 
-Privacy.propTypes = {
+RightQuestion.propTypes = {
   data: PropTypes.shape({
-    privacy: PropTypes.shape({
+    rightQuestion: PropTypes.shape({
       edges: PropTypes.arrayOf(
         PropTypes.shape({
           node: PropTypes.shape({
@@ -85,11 +85,13 @@ Privacy.propTypes = {
   }).isRequired,
 }
 
-export default Privacy
+export default RightQuestion
 
 export const pageQuery = graphql`
   {
-    privacy: allMdx(filter: { fileAbsolutePath: { regex: "/privacy/" } }) {
+    rightQuestion: allMdx(
+      filter: { fileAbsolutePath: { regex: "/right-question/" } }
+    ) {
       edges {
         node {
           body

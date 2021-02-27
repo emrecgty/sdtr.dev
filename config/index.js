@@ -97,8 +97,8 @@ module.exports = {
   },
   footerLinks: [
     {
-      name: "Gizlilik",
-      url: "/privacy",
+      name: "Doğru Soru Nasıl Sorulur?",
+      url: "/right-question",
     },
     {
       name: "Imprint",
