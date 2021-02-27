@@ -36,9 +36,9 @@ const IndexPage = ({ data }) => {
           }
         />
         <Hero content={data.hero.edges} />
+        <About content={data.about.edges} />
         {/* Articles is populated via Medium RSS Feed fetch */}
         <Articles />
-        <About content={data.about.edges} />
         <Categories content={data.categories.edges} />
         <Projects content={data.projects.edges} />
         <Contact content={data.contact.edges} />
