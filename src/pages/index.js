@@ -74,7 +74,9 @@ export const pageQuery = graphql`
             greetings
             title
             subtitlePrefix
-            subtitle
+            subtitleLeft
+            subtitleRight
+            discord
             icon {
               childImageSharp {
                 fluid(maxWidth: 60, quality: 90) {
