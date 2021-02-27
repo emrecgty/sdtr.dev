@@ -34,7 +34,7 @@ describe("IndexPage", () => {
 
   it("renders other pages", () => {
     cy.findByTestId("footer-links")
-      .findByText(/imprint/i)
+      .findByText(/rules/i)
       .click()
     cy.findByTestId("heading").should("exist")
   })
