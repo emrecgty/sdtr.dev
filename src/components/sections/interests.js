@@ -152,7 +152,17 @@ const Interests = ({ content }) => {
   return (
     <StyledSection id="interests">
       <StyledContentWrapper>
-        <h3 className="section-title">{frontmatter.title}</h3>
+        <h3 className="section-title">
+          <a
+            href="https://discord.gg/J3PTmeFj6s"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "#7289DA" }}
+          >
+            {frontmatter.discord}
+          </a>{" "}
+          {frontmatter.title}
+        </h3>
         <StyledInterests itemCount={interests.length} ref={ref}>
           {interests.slice(0, shownInterests).map(({ name, emoji }, key) => (
             <motion.div
