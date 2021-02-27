@@ -101,8 +101,8 @@ module.exports = {
       url: "/right-question",
     },
     {
-      name: "Imprint",
-      url: "/imprint",
+      name: "Topluluk Kurallarımız",
+      url: "/rules",
     },
   ],
 }

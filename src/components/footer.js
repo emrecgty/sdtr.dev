@@ -27,11 +27,11 @@ const StyledContentWrapper = styled(ContentWrapper)`
     align-items: center;
     .footer-links {
       /* Adjust width of links wrapper accordingly */
-      width: 20rem;
+      width: 30rem;
       display: flex;
       justify-content: space-between;
-      @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
-        width: 20rem;
+      @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+        width: 15rem;
       }
     }
   }
