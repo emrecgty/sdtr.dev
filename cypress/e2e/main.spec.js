@@ -23,13 +23,13 @@ describe("IndexPage", () => {
 
   it("references legal pages", () => {
     cy.findByTestId("footer-links")
-      .findByText(/imprint/i)
+      .findByText(/rules/i)
       .should("have.attr", "href")
-      .and("include", "imprint")
+      .and("include", "rules")
     cy.findByTestId("footer-links")
-      .findByText(/privacy/i)
+      .findByText(/right-question/i)
       .should("have.attr", "href")
-      .and("include", "privacy")
+      .and("include", "right-question")
   })
 
   it("renders other pages", () => {
