@@ -24,10 +24,13 @@ const StyledSection = styled.section`
 const StyledContentWrapper = styled(ContentWrapper)`
   && {
     width: 100%;
-    max-width: 36rem;
     margin: 0;
     padding: 0;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 `
 
@@ -46,8 +49,8 @@ const NotFoundPage = () => {
         />
         <StyledSection>
           <StyledContentWrapper>
-            <h1 data-testid="heading"> 404 BULUNAMADI</h1>
-            <h1>(╯°□°）╯︵ ┻━┻</h1>
+            <h1 data-testid="heading">(╯°□°）╯︵ ┻━┻</h1>
+            <h1>404 BULUNAMADI</h1>
             <p>
               Aradığın şeyi belki{" "}
               <a
@@ -56,9 +59,9 @@ const NotFoundPage = () => {
                 rel="noopener noreferrer"
                 style={{ color: "#7289DA" }}
               >
-                burada
+                burada 👀
               </a>{" "}
-              bulabilirsin 👀
+              bulabilirsin!
             </p>
           </StyledContentWrapper>
         </StyledSection>
