@@ -49,7 +49,7 @@ module.exports = {
   mediumRssFeed:
     "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2Fsoftware-development-turkey",
 
-  shownArticles: 3,
+  shownArticles: 10,
 
   //-- SOCIAL MEDIA SETTINGS -----
   // There are icons available for the following platforms:
@@ -68,37 +68,41 @@ module.exports = {
       name: "Github",
       url: "https://github.com/sdtrdev",
     },
+    {
+      name: "Twitter",
+      url: "https://twitter.com/sdtrdev",
+    },
   ],
 
   //-- NAVIGATION SETTINGS -----
   navLinks: {
     menu: [
       {
-        name: "Articles",
+        name: "Makalelerimiz",
         url: "/#articles",
       },
       {
-        name: "About",
+        name: "Hakkımızda",
         url: "/#about",
       },
       {
-        name: "Features",
+        name: "Projelerimiz",
         url: "/#projects",
       },
     ],
     button: {
-      name: "Contact",
+      name: "Bize Ulaşın",
       url: "/#contact",
     },
   },
   footerLinks: [
     {
-      name: "Privacy",
-      url: "/privacy",
+      name: "Doğru Soru Nasıl Sorulur?",
+      url: "/right-question",
     },
     {
-      name: "Imprint",
-      url: "/imprint",
+      name: "Topluluk Kurallarımız",
+      url: "/rules",
     },
   ],
 }

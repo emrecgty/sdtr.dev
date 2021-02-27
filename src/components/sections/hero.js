@@ -129,7 +129,16 @@ const Hero = ({ content }) => {
           <h2 className="subtitle">
             {frontmatter.subtitlePrefix}{" "}
             <AnimatedUnderlining animate={uControls} big>
-              {frontmatter.subtitle}
+              {frontmatter.subtitleLeft}
+              <a
+                href="https://discord.gg/J3PTmeFj6s"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "#7289DA" }}
+              >
+                {frontmatter.discord}
+              </a>{" "}
+              {frontmatter.subtitleRight}
             </AnimatedUnderlining>
           </h2>
           <div className="description">

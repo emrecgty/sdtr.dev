@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useRef } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import Img from "gatsby-image"
 import { motion, useAnimation } from "framer-motion"
 
 import { detectMobileAndTablet, isSSR } from "../../utils"
-import { useOnScreen } from "../../hooks/"
+import { useOnScreen } from "../../hooks"
 import ContentWrapper from "../../styles/contentWrapper"
 import Button from "../../styles/button"
 
@@ -40,9 +39,9 @@ const StyledContentWrapper = styled(ContentWrapper)`
   }
 `
 
-const StyledInterests = styled.div`
+const StyledCategories = styled.div`
   display: grid;
-  /* Calculate how many columns are needed, depending on interests count */
+  /* Calculate how many columns are needed, depending on categories count */
   grid-template-columns: repeat(
     ${({ itemCount }) => Math.ceil(itemCount / 2)},
     15.625rem
@@ -94,7 +93,7 @@ const StyledInterests = styled.div`
     }
   }
 
-  .interest {
+  .categories {
     width: 15.625rem;
     height: 3rem;
     display: flex;
@@ -104,17 +103,17 @@ const StyledInterests = styled.div`
     border: 0.125rem solid ${({ theme }) => theme.colors.primary};
     border-radius: ${({ theme }) => theme.borderRadius};
     background: ${({ theme }) => theme.colors.card};
-    .icon {
+    .emoji {
       margin-right: 0.5rem;
     }
   }
 `
 
-const Interests = ({ content }) => {
+const Categories = ({ content }) => {
   const { exports, frontmatter } = content[0].node
-  const { shownItems, interests } = exports
+  const { shownItems, categories } = exports
 
-  const [shownInterests, setShownInterests] = useState(shownItems)
+  const [shownCategories, setShownCategories] = useState(shownItems)
 
   const ref = useRef()
   const onScreen = useOnScreen(ref)
@@ -123,19 +122,19 @@ const Interests = ({ content }) => {
   const bControls = useAnimation()
 
   useEffect(() => {
-    // If mobile or tablet, show all interests initially
-    // Otherwise interests.mdx will determine how many interests are shown
+    // If mobile or tablet, show all categories initially
+    // Otherwise categories.mdx will determine how many categories are shown
     // (isSSR) is used to prevent error during gatsby build
     if (!isSSR && detectMobileAndTablet(window.innerWidth)) {
-      setShownInterests(interests.length)
+      setShownCategories(categories.length)
     }
-  }, [interests])
+  }, [categories])
 
   useEffect(() => {
     const sequence = async () => {
       if (onScreen) {
         // i receives the value of the custom prop - can be used to stagger
-        // the animation of each "interest" element
+        // the animation of each "categories" element
         await iControls.start(i => ({
           opacity: 1,
           scaleY: 1,
@@ -145,49 +144,60 @@ const Interests = ({ content }) => {
       }
     }
     sequence()
-  }, [onScreen, shownInterests, iControls, bControls])
+  }, [onScreen, shownCategories, iControls, bControls])
 
-  const showMoreItems = () => setShownInterests(shownInterests + 4)
+  const showMoreItems = () => setShownCategories(shownCategories + 4)
 
   return (
-    <StyledSection id="interests">
+    <StyledSection id="categories">
       <StyledContentWrapper>
-        <h3 className="section-title">{frontmatter.title}</h3>
-        <StyledInterests itemCount={interests.length} ref={ref}>
-          {interests.slice(0, shownInterests).map(({ name, icon }, key) => (
+        <h3 className="section-title">
+          <a
+            href="https://discord.gg/J3PTmeFj6s"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "#7289DA" }}
+          >
+            {frontmatter.discord}
+          </a>{" "}
+          {frontmatter.title}
+        </h3>
+        <StyledCategories itemCount={categories.length} ref={ref}>
+          {categories.slice(0, shownCategories).map(({ name, emoji }, key) => (
             <motion.div
-              className="interest"
+              className="categories"
               key={key}
               custom={key}
               initial={{ opacity: 0, scaleY: 0 }}
               animate={iControls}
             >
-              <Img className="icon" fixed={icon.childImageSharp.fixed} /> {name}
+              <span className="emoji">{emoji}</span>
+              {name}
             </motion.div>
           ))}
-          {shownInterests < interests.length && (
+          {shownCategories < categories.length && (
             <motion.div initial={{ opacity: 0, scaleY: 0 }} animate={bControls}>
               <Button
                 onClick={() => showMoreItems()}
                 type="button"
                 textAlign="left"
               >
-                + Load more
+                + Daha Fazlası
               </Button>
             </motion.div>
           )}
-        </StyledInterests>
+        </StyledCategories>
       </StyledContentWrapper>
     </StyledSection>
   )
 }
 
-Interests.propTypes = {
+Categories.propTypes = {
   content: PropTypes.arrayOf(
     PropTypes.shape({
       node: PropTypes.shape({
         exports: PropTypes.shape({
-          interests: PropTypes.array.isRequired,
+          categories: PropTypes.array.isRequired,
           shownItems: PropTypes.number.isRequired,
         }).isRequired,
         frontmatter: PropTypes.object.isRequired,
@@ -196,4 +206,4 @@ Interests.propTypes = {
   ).isRequired,
 }
 
-export default Interests
+export default Categories
