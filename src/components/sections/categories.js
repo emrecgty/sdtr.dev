@@ -126,7 +126,7 @@ const Categories = ({ content }) => {
     // Otherwise categories.mdx will determine how many categories are shown
     // (isSSR) is used to prevent error during gatsby build
     if (!isSSR && detectMobileAndTablet(window.innerWidth)) {
-      setShownCategoriess(categories.length)
+      setShownCategories(categories.length)
     }
   }, [categories])
 
